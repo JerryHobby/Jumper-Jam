@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c01xptijvfjmi"]
+
+[ext_resource type="Script" path="res://Scenes/game_camera.gd" id="1_rh33b"]
+
+[node name="GameCamera" type="Camera2D"]
+script = ExtResource("1_rh33b")
+
+[node name="Destroyer" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Destroyer"]
+
+[connection signal="body_entered" from="Destroyer" to="Destroyer" method="_on_body_entered"]

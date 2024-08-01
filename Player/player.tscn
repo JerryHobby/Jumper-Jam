@@ -1,0 +1,179 @@
+[gd_scene load_steps=13 format=3 uid="uid://bbd27ch1dvjy7"]
+
+[ext_resource type="Texture2D" uid="uid://w4mh2v1878ui" path="res://Assets/textures/character/Skin1Idle.png" id="1_avnpy"]
+[ext_resource type="Script" path="res://Player/player.gd" id="1_bgrtk"]
+[ext_resource type="Texture2D" uid="uid://b4w6bunmwb5rv" path="res://Assets/textures/character/Skin1Jump.png" id="3_sssgi"]
+[ext_resource type="Texture2D" uid="uid://4ln62xbamg7h" path="res://Assets/textures/character/Skin2Idle.png" id="4_vfmbr"]
+[ext_resource type="Texture2D" uid="uid://dgfvm26b6hvrj" path="res://Assets/textures/character/Skin2Jump.png" id="5_vjfk2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhcfc"]
+size = Vector2(32, 9)
+
+[sub_resource type="Animation" id="Animation_rp7pa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -46)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("1_avnpy")]
+}
+
+[sub_resource type="Animation" id="Animation_ut8xo"]
+resource_name = "fall_red"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2, -51)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("4_vfmbr")]
+}
+
+[sub_resource type="Animation" id="Animation_ea4o1"]
+resource_name = "jump_red"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.5, -49)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("5_vjfk2")]
+}
+
+[sub_resource type="Animation" id="Animation_lremt"]
+resource_name = "fall_yellow"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.08165e-12, -46)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("1_avnpy")]
+}
+
+[sub_resource type="Animation" id="Animation_l8rm4"]
+resource_name = "jump_yellow"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.08165e-12, -49)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("3_sssgi")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_elshh"]
+_data = {
+"RESET": SubResource("Animation_rp7pa"),
+"fall_red": SubResource("Animation_ut8xo"),
+"fall_yellow": SubResource("Animation_lremt"),
+"jump_red": SubResource("Animation_ea4o1"),
+"jump_yellow": SubResource("Animation_l8rm4")
+}
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 1
+collision_mask = 2
+script = ExtResource("1_bgrtk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -46)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_avnpy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_nhcfc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_elshh")
+}
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(5.96046e-07, -1)
+scale = Vector2(2.7, 0.1)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

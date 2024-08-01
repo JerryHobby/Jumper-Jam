@@ -1,0 +1,25 @@
+[gd_scene load_steps=8 format=3 uid="uid://cktiluy16hj5f"]
+
+[ext_resource type="PackedScene" uid="uid://be7emutl7k2kg" path="res://Scenes/pause_screen.tscn" id="1_j6p5u"]
+[ext_resource type="Script" path="res://Scenes/screens.gd" id="1_mjtpv"]
+[ext_resource type="PackedScene" uid="uid://neut5lcolp48" path="res://Scenes/title_screen.tscn" id="2_3peo6"]
+[ext_resource type="PackedScene" uid="uid://dduso7h0auwqj" path="res://Scenes/store_screen.tscn" id="2_25rvi"]
+[ext_resource type="PackedScene" uid="uid://dd2xpb1f5v7a6" path="res://Scenes/game_over_screen.tscn" id="3_06plb"]
+[ext_resource type="PackedScene" uid="uid://rme52pdq8sh1" path="res://Scenes/debug.tscn" id="4_tn5tr"]
+[ext_resource type="PackedScene" uid="uid://dgrju1dfmhv5h" path="res://Scenes/shop_screen.tscn" id="5_602ee"]
+
+[node name="Screens" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_mjtpv")
+
+[node name="StoreScreen" parent="." instance=ExtResource("2_25rvi")]
+
+[node name="ShopScreen" parent="." instance=ExtResource("5_602ee")]
+
+[node name="PauseScreen" parent="." instance=ExtResource("1_j6p5u")]
+
+[node name="TitleScreen" parent="." instance=ExtResource("2_3peo6")]
+
+[node name="GameOverScreen" parent="." instance=ExtResource("3_06plb")]
+
+[node name="Debug" parent="." instance=ExtResource("4_tn5tr")]

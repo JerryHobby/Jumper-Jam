@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://elttd1kytpjo"]
+
+[ext_resource type="Script" path="res://Scenes/sound_fx.gd" id="1_j55ry"]
+
+[node name="SoundFX" type="Node"]
+process_mode = 3
+script = ExtResource("1_j55ry")
+
+[node name="SoundFxPlayer_1" type="AudioStreamPlayer" parent="."]
+
+[node name="SoundFxPlayer_2" type="AudioStreamPlayer" parent="."]
+
+[node name="SoundFxPlayer_3" type="AudioStreamPlayer" parent="."]
+
+[node name="SoundFxPlayer_4" type="AudioStreamPlayer" parent="."]
+
+[node name="SoundFxPlayer_5" type="AudioStreamPlayer" parent="."]
+max_polyphony = 5

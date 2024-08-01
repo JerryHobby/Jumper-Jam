@@ -1,0 +1,89 @@
+[gd_scene load_steps=3 format=3 uid="uid://rme52pdq8sh1"]
+
+[ext_resource type="Script" path="res://Scenes/debug.gd" id="1_5x6o6"]
+[ext_resource type="Texture2D" uid="uid://ke3cxy6tf2hh" path="res://Assets/textures/ui/gear.png" id="1_h8jmw"]
+
+[node name="Debug" type="Control"]
+process_mode = 3
+z_index = 4096
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_5x6o6")
+
+[node name="ConsoleLog" type="Control" parent="." groups=["debug_console"]]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BlackBG" type="ColorRect" parent="ConsoleLog"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.466667)
+
+[node name="MarginContainer" type="MarginContainer" parent="ConsoleLog"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 104.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BuildNumberLabel" type="Label" parent="ConsoleLog/MarginContainer"]
+layout_mode = 2
+text = "Build: 0.1.0
+"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ConsoleLog"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 112.0
+offset_right = -21.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConsoleLog/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="LogLabel" type="RichTextLabel" parent="ConsoleLog/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+scroll_following = true
+
+[node name="ToggleConsole" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = -66.0
+offset_right = 63.0
+offset_bottom = -16.0
+grow_vertical = 0
+texture_normal = ExtResource("1_h8jmw")
+ignore_texture_size = true
+stretch_mode = 4
+
+[connection signal="pressed" from="ToggleConsole" to="." method="_on_toggle_console_pressed"]

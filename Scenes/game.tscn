@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://inwe1aijvk6d"]
+
+[ext_resource type="Script" path="res://Scenes/game.gd" id="1_f1msg"]
+[ext_resource type="Texture2D" uid="uid://bylicekmnp4ql" path="res://Assets/textures/bg/Layer1.png" id="2_xosmj"]
+[ext_resource type="Texture2D" uid="uid://de8ppxykcvwl7" path="res://Assets/textures/bg/Layer2.png" id="3_ase3i"]
+[ext_resource type="PackedScene" uid="uid://cwar6g36myf6h" path="res://Scenes/level_generator.tscn" id="3_dk3l0"]
+[ext_resource type="Texture2D" uid="uid://d11niqf56oj2u" path="res://Assets/textures/bg/Ground.png" id="3_sm08o"]
+[ext_resource type="Texture2D" uid="uid://cxlsfis1rjn3g" path="res://Assets/textures/bg/Layer3.png" id="4_erafp"]
+[ext_resource type="PackedScene" uid="uid://dc6nmuhffrw6p" path="res://Scenes/hud.tscn" id="7_on4nk"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_f1msg")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer1"]
+texture = ExtResource("2_xosmj")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("3_ase3i")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource("4_erafp")
+centered = false
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="LevelGenerator" parent="." instance=ExtResource("3_dk3l0")]
+
+[node name="GroundSprite" type="Sprite2D" parent="."]
+position = Vector2(270, 960)
+scale = Vector2(1, 0.7)
+texture = ExtResource("3_sm08o")
+offset = Vector2(2.08165e-12, -61)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("7_on4nk")]
+mouse_filter = 2
