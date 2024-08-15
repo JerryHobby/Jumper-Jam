@@ -1,25 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://cktiluy16hj5f"]
+[gd_scene load_steps=7 format=3 uid="uid://b5s7sj7yt8qku"]
 
-[ext_resource type="PackedScene" uid="uid://be7emutl7k2kg" path="res://Scenes/pause_screen.tscn" id="1_j6p5u"]
-[ext_resource type="Script" path="res://Scenes/screens.gd" id="1_mjtpv"]
-[ext_resource type="PackedScene" uid="uid://neut5lcolp48" path="res://Scenes/title_screen.tscn" id="2_3peo6"]
-[ext_resource type="PackedScene" uid="uid://dduso7h0auwqj" path="res://Scenes/store_screen.tscn" id="2_25rvi"]
-[ext_resource type="PackedScene" uid="uid://dd2xpb1f5v7a6" path="res://Scenes/game_over_screen.tscn" id="3_06plb"]
-[ext_resource type="PackedScene" uid="uid://rme52pdq8sh1" path="res://Scenes/debug.tscn" id="4_tn5tr"]
-[ext_resource type="PackedScene" uid="uid://dgrju1dfmhv5h" path="res://Scenes/shop_screen.tscn" id="5_602ee"]
+[ext_resource type="Script" path="res://Scenes/screens.gd" id="1_hdh4a"]
+[ext_resource type="PackedScene" uid="uid://dgrju1dfmhv5h" path="res://Scenes/shop_screen.tscn" id="1_lo0wq"]
+[ext_resource type="PackedScene" uid="uid://neut5lcolp48" path="res://Scenes/title_screen.tscn" id="2_d2dhq"]
+[ext_resource type="PackedScene" uid="uid://be7emutl7k2kg" path="res://Scenes/pause_screen.tscn" id="3_o6e7r"]
+[ext_resource type="PackedScene" uid="uid://dd2xpb1f5v7a6" path="res://Scenes/game_over_screen.tscn" id="4_ytpgh"]
+[ext_resource type="PackedScene" uid="uid://rme52pdq8sh1" path="res://Scenes/debug.tscn" id="7_tmp2a"]
 
 [node name="Screens" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_mjtpv")
+script = ExtResource("1_hdh4a")
 
-[node name="StoreScreen" parent="." instance=ExtResource("2_25rvi")]
+[node name="TitleScreen" parent="." instance=ExtResource("2_d2dhq")]
 
-[node name="ShopScreen" parent="." instance=ExtResource("5_602ee")]
+[node name="PauseScreen" parent="." instance=ExtResource("3_o6e7r")]
 
-[node name="PauseScreen" parent="." instance=ExtResource("1_j6p5u")]
+[node name="GameOverScreen" parent="." instance=ExtResource("4_ytpgh")]
 
-[node name="TitleScreen" parent="." instance=ExtResource("2_3peo6")]
+[node name="ShopScreen" parent="." instance=ExtResource("1_lo0wq")]
 
-[node name="GameOverScreen" parent="." instance=ExtResource("3_06plb")]
-
-[node name="Debug" parent="." instance=ExtResource("4_tn5tr")]
+[node name="Debug" parent="." instance=ExtResource("7_tmp2a")]

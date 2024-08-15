@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmlleje6ml4e2"]
+[gd_scene load_steps=5 format=3 uid="uid://dmlleje6ml4e2"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_xrdwm"]
 [ext_resource type="PackedScene" uid="uid://inwe1aijvk6d" path="res://Scenes/game.tscn" id="2_r4nmv"]
-[ext_resource type="PackedScene" uid="uid://cg8k5wxx4wlv4" path="res://Scenes/screens-save.tscn" id="3_fshc4"]
+[ext_resource type="PackedScene" uid="uid://b5s7sj7yt8qku" path="res://Scenes/screens.tscn" id="3_5gg1q"]
+[ext_resource type="PackedScene" uid="uid://b78f08lqgcjds" path="res://Scenes/iap_manager.tscn" id="4_lmmoo"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_xrdwm")
 
 [node name="Game" parent="." instance=ExtResource("2_r4nmv")]
 
-[node name="Screens" parent="." instance=ExtResource("3_fshc4")]
+[node name="Screens" parent="." instance=ExtResource("3_5gg1q")]
+
+[node name="IAPManager" parent="." instance=ExtResource("4_lmmoo")]

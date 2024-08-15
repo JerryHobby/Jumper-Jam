@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="Jumper Jam"
+config/version="1.0.1"
 run/main_scene="res://Scenes/main.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://Assets/textures/ui/SmallLogo.png"
 
 [autoload]
 
+Log="*res://Singletons/Log.gd"
 GameManager="*res://Singletons/GameManager.gd"
 SoundFX="*res://Scenes/sound_fx.tscn"
 
@@ -27,6 +29,10 @@ window/size/viewport_height=960
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
 window/handheld/orientation=1
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/android_IAPP/plugin.cfg")
 
 [input]
 
