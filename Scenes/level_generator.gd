@@ -109,4 +109,3 @@ func create_platform(location:Vector2, is_floor:bool = false):
 
 	platforms.add_child(platform)
 	return platform
-

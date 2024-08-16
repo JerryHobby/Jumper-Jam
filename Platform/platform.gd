@@ -27,4 +27,3 @@ func die():
 	dieing = true
 	#Log.write(Log.Type.DEBUG, "Platform removed")
 	$AnimationPlayer.play("die")
-

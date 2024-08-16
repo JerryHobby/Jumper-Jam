@@ -12,11 +12,12 @@ var pirate_player_skin_sku = "new_player_skin"
  
 
 var apple_payment = null
-var apple_pirate_player_skin_sku = "new_player_skin"
+var apple_pirate_player_skin_sku = "pirate_player_skin"
 
 
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	if Engine.has_singleton(ANDROID_BILLING_PLUGIN):
 		Log.write(Log.Type.DEBUG, "Android IAP support is enabled.")
 		android_iap()
@@ -59,7 +60,7 @@ func ios_iap():
 
 
 func poll_apple_events():
-	Log.write(Log.Type.DEBUG, "Creating IAP Timer")
+	#Log.write(Log.Type.DEBUG, "Creating IAP Timer")
 	var timer = Timer.new()
 	timer.wait_time = 1
 	add_child(timer)
@@ -68,7 +69,7 @@ func poll_apple_events():
 	
 
 func apple_check_events():
-	Log.write(Log.Type.DEBUG, "Polling Apple")
+	#Log.write(Log.Type.DEBUG, "Polling Apple")
 	while apple_payment.get_pending_event_count() > 0:
 		var event = apple_payment.pop_pending_event()
 		if event.result == "ok":

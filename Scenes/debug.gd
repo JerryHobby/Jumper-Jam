@@ -13,4 +13,3 @@ func _on_toggle_console_pressed():
 	SoundFX.play("Click")
 	console_log.visible = !console_log.visible
 	Log.write(Log.Type.DEBUG, "Console visible: %s" % console_log.visible)
-

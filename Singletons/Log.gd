@@ -98,4 +98,3 @@ func print_log(my_prefix = ""):
 func format_msg(type:Type, msg:String) -> String:
 	var ts = Time.get_time_string_from_system()
 	return "%s [%s] %s" % [ts, type_prefix[type], msg]
-

@@ -123,4 +123,3 @@ func change_screen(new_screen):
 		await current_screen.appear()
 	else:
 		get_tree().paused = false
-

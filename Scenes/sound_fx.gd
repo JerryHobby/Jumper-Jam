@@ -25,4 +25,3 @@ func play(sound:String):
 			return
 	
 	Log.write(Log.Type.ERROR, "SoundFX - No player available")
-

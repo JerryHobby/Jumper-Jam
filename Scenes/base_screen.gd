@@ -28,4 +28,3 @@ func fade(goal:float):
 	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(self, "modulate:a", goal, FADE_TIME)
 	await (tween.finished)
-
