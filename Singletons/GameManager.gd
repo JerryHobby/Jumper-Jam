@@ -10,6 +10,7 @@ signal onNewGame
 signal onScore
 signal onGameOver
 signal onPurchaseSkin
+signal onRestorePurchases
 
 
 var save_file = "user://highscore.save"

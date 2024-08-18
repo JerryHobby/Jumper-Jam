@@ -59,6 +59,8 @@ func _on_button_pressed(button:TextureButton):
 			_onShopPurchaseSkinButton()
 		"ShopClose":
 			_onShopCloseButton()
+		"RestorePurchases":
+			_onRestorePurchasesButton()
 
 
 func _onGameOverRetryButton():
@@ -94,6 +96,11 @@ func _onTitleShopButton():
 
 func _onShopPurchaseSkinButton():
 	GameManager.onPurchaseSkin.emit()
+	change_screen(title_screen)
+
+
+func _onRestorePurchasesButton():
+	GameManager.onRestorePurchases.emit()
 	change_screen(title_screen)
 
 
