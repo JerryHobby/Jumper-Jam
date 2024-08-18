@@ -145,6 +145,7 @@ func android_iap():
 
 
 func onRestoreGooglePurchases():
+	google_payment.queryPurchases("inapp")
 	Log.write(Log.Type.DEBUG, "Google IAP restore purchases requested")
 	pass
 
